@@ -1,7 +1,6 @@
 {
   "name": "freezeheader",
   "description": "A simple jquery plugin to freeze header row in html table.",
-  "version": "1.0.7",
   "keywords": [
     "Freezeheader",
     "Header",
@@ -10,7 +9,7 @@
   ],
   "homepage": "http://laertejjunior.github.io/freezeheader/",
   "dependencies": {
-    "jquery": ">= 1.9.1"
+    "jquery": ">= 1.7"
   },
   "devDependencies": {},
   "authors": [
@@ -22,7 +21,7 @@
   ],
   "license": "LICENSE.md",
   "main": [
-    "./js/jquery.freezeheader.js"
+    "js/jquery.freezeheader.js"
   ],
   "ignore": [
   ]
