@@ -1,0 +1,29 @@
+{
+  "name": "freezeheader",
+  "description": "A simple jquery plugin to freeze header row in html table.",
+  "version": "1.0.7",
+  "keywords": [
+    "Freezeheader",
+    "Header",
+    "table",
+    "fixed"
+  ],
+  "homepage": "http://laertejjunior.github.io/freezeheader/",
+  "dependencies": {
+    "jquery": ">= 1.9.1"
+  },
+  "devDependencies": {},
+  "authors": [
+    {
+      "name": "Laerte Mercier Junior",
+      "email": "laertejjunior@gmail.com",
+      "homepage": "https://github.com/laertejjunior/"
+    }
+  ],
+  "license": "LICENSE.md",
+  "main": [
+    "./js/jquery.freezeheader.js"
+  ],
+  "ignore": [
+  ]
+}
