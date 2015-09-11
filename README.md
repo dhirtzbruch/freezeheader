@@ -8,11 +8,26 @@ jquery.freezeheader
 <h2>
 <a name="installation" class="anchor" href="#installation"><span class="mini-icon mini-icon-link"></span></a>Installation</h2>
 
+<h3>Manual installation</h3>
 <p>Include script <em>after</em> the jQuery library (unless you are packaging scripts somehow else):</p>
-
 <pre><code>&lt;script src="/path/to/jquery.freezeheader.js"&gt;&lt;/script&gt;
 </code></pre>
 
+<h3>Using bower package manager</h3>
+<p>The Plugin is already prepared for installation using bower package manager.</p>
+<p>The installation is as simple as:</p>
+<h4>Add the Repository definition to your bower dependencies</h4>
+
+```javascript
+    {
+        "dependencies" : {
+            "freezeheader" : "https://github.com/dhirtzbruch/freezeheader/archive/master.zip"
+        }
+    }
+```
+
+<h4>Install Plugin</h4>
+<pre><code>bower install freezeheader</code></pre>
 
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="mini-icon mini-icon-link"></span></a>Usage</h2>
