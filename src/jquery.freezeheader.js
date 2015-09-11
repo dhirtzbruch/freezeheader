@@ -40,14 +40,13 @@
 
         // remove 'px' for backwards compatibility
         $.each(params, function (index, item) {
-            if(params[item] === null || typeof params[item] !== 'string')
-            {
+            if (params[item] === null || typeof params[item] !== 'string') {
                 return true;
             }
             params[item] = parseInt(params[item].replace('px', ''));
         });
 
-        function freezeHeader(elem) {
+        var freezeHeader = function(elem) {
             var objectId = elem.attr('id') || ('tbl-' + (++TABLE_ID));
             if (elem.length > 0 && elem[0].tagName.toLowerCase() == 'table') {
 
@@ -55,7 +54,7 @@
                     id: objectId,
                     grid: elem,
                     container: null,
-                    header: null,
+                    header: elem.find('thead'),
                     divScroll: null,
                     scroller: null
                 };
@@ -69,8 +68,6 @@
                         })
                         .addClass(params.bodyClass);
                 }
-
-                object.header = object.grid.find('thead');
 
                 if (params.height !== null) {
                     if ($('#hdScroll' + object.id).length == 0) {
@@ -127,18 +124,18 @@
 
                 });
             }
-        }
+        };
 
-        function limitReached(object, params) {
+        var limitReached = function(object, params) {
             if (params.height !== null || params.scrollListenerElement !== null) {
                 return (object.header.offset().top <= object.scroller.offset().top);
             }
             else {
                 return ($(document).scrollTop() > object.header.offset().top - params.scrollOffset && $(document).scrollTop() < (object.grid.height() - object.header.height() - object.grid.find('tr:last').height()) + object.header.offset().top);
             }
-        }
+        };
 
-        function cloneHeaderRow(object) {
+        var cloneHeaderRow = function(object) {
             object.container.html('');
             object.container.val('');
             var table = $('<table/>')
@@ -155,10 +152,10 @@
 
             table.append('<thead>' + object.header.html() + '</thead>');
 
-            object.container.append(table);
-            object.container.width(object.header.width());
-            object.container.height(object.header.height);
-            object.container.find('th').each(function (index) {
+            object.container.append(table)
+                .width(object.header.width())
+                .height(object.header.height)
+                .find('th').each(function (index) {
                 var cell = object.grid.find('th').eq(index);
                 $(this).css('width', cell.width());
             });
@@ -182,10 +179,10 @@
             } else {
                 object.container.css({
                     top: params.offset + 'px',
-                    position: 'fixed',
+                    position: 'fixed'
                 });
             }
-        }
+        };
 
         return this.each(function (i, e) {
             freezeHeader($(e));
