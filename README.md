@@ -64,8 +64,8 @@ jquery.freezeheader
 
 <h2>
 <a name="authors" class="anchor" href="#authors"><span class="mini-icon mini-icon-link"></span></a>Authors</h2>
-    <ul>
-        <li><a href="https://github.com/laertejjunior">Laerte Mercier Junior</a></li>
-        <li><a href="https://github.com/dhirtzbruch">Daniel Hirtzbruch</a></li>
-    </ul>
+<ul>
+    <li><a href="https://github.com/laertejjunior">Laerte Mercier Junior</a></li>
+    <li><a href="https://github.com/dhirtzbruch">Daniel Hirtzbruch</a></li>
+</ul>
 </article>
