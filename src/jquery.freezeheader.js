@@ -23,6 +23,7 @@
     var TABLE_ID = 0;
     $.fn.freezeHeader = function (params) {
 
+        var self = $(this);
         var defaultParameters = {
             offset: 0,
             scrollOffset: 0,
@@ -46,7 +47,7 @@
             params[item] = parseInt(params[item].replace('px', ''));
         });
 
-        var freezeHeader = function(elem) {
+        var freezeHeader = function (elem) {
             var objectId = elem.attr('id') || ('tbl-' + (++TABLE_ID));
             if (elem.length > 0 && elem[0].tagName.toLowerCase() == 'table') {
 
@@ -126,7 +127,7 @@
             }
         };
 
-        var limitReached = function(object, params) {
+        var limitReached = function (object, params) {
             if (params.height !== null || params.scrollListenerElement !== null) {
                 return (object.header.offset().top <= object.scroller.offset().top);
             }
@@ -135,7 +136,7 @@
             }
         };
 
-        var cloneHeaderRow = function(object) {
+        var cloneHeaderRow = function (object) {
             object.container.html('');
             object.container.val('');
             var table = $('<table/>')
@@ -153,12 +154,18 @@
             table.append('<thead>' + object.header.html() + '</thead>');
 
             object.container.append(table)
-                .width(object.header.width())
+                .width(
+                    object.header.width()
+                    + parseInt(self.css('border-left-width'))
+                    + parseInt(self.css('border-right-width'))
+                )
                 .height(object.header.height)
-                .find('th').each(function (index) {
-                var cell = object.grid.find('th').eq(index);
-                $(this).css('width', cell.width());
-            });
+                .find('th')
+                .each(function (index) {
+                        var cell = object.grid.find('th').eq(index);
+                        $(this).css('width', cell.width());
+                    }
+                );
 
             object.container.css('visibility', 'visible');
 
