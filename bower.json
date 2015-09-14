@@ -21,7 +21,7 @@
   ],
   "license": "LICENSE.md",
   "main": [
-    "js/jquery.freezeheader.js"
+    "src/jquery.freezeheader.js"
   ],
   "ignore": [
   ]
